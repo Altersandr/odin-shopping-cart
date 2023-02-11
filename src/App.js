@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles/App.css";
+import OffcanvasExample from "./components/Navbar";
+
+import React, { useEffect, useState } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((json) => setProducts(json));
+  }, []);
+
+  const displayProducts = products.map((item) => {
+    return <p>{item.title}</p>;
+  });
+
+  return <div className="App">{displayProducts && <OffcanvasExample />}</div>;
 }
 
 export default App;
