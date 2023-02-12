@@ -7,7 +7,27 @@ const Navbar = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar header">
+      <h1 id="page-title">Shop Mockup</h1>
+      <div>
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <a className="nav-link" href="#">
+              Home
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">
+              Shop
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
       <button className="navbar-toggler" onClick={toggle}>
         <img
           height="45px"
@@ -21,23 +41,8 @@ const Navbar = () => {
           transform: isOpen ? "translateX(0)" : "translateX(100%)",
         }}
       >
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Home
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              About
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Contact
-            </a>
-          </li>
-        </ul>
+        <div>Shop contents</div>
+        <button onClick={toggle}>Close</button>
       </div>
     </nav>
   );

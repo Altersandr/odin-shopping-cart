@@ -1,0 +1,26 @@
+footer {
+  z-index: 3;
+  height: 50px;
+  width: 100%;
+  /* overflow: hidden; */
+  background-color: #105f5b;
+  display: flex;
+  justify-content: center;
+  gap: 4em;
+  align-items: center;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+
+@keyframes fullrotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#github:hover {
+  animation: fullrotation 1s linear infinite;
+}
