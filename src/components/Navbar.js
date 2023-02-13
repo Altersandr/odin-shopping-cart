@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
+import Cart from "./Cart";
 
-const Navbar = () => {
+const Navbar = ({ cartItems }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -12,37 +14,43 @@ const Navbar = () => {
       <div>
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <NavLink className="nav-link" to="/">
               Home
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <NavLink className="nav-link" to="/shop">
               Shop
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <NavLink className="nav-link" to="/contact">
               Contact
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>
-      <button className="navbar-toggler" onClick={toggle}>
-        <img
-          height="45px"
-          src="https://cdn-icons-png.flaticon.com/512/262/262611.png"
-          className="navbar-toggler-icon"
-        />
-      </button>
+      <div id="cart-items">
+        <span id="orders">0</span>
+        <button className="navbar-toggler" onClick={toggle}>
+          <img
+            height="45px"
+            src="https://cdn-icons-png.flaticon.com/512/262/262611.png"
+            className="navbar-toggler-icon"
+            alt="cart"
+          />
+        </button>
+      </div>
       <div
         className={`offcanvas-collapse ${isOpen ? "show" : ""}`}
         style={{
           transform: isOpen ? "translateX(0)" : "translateX(100%)",
         }}
       >
-        <div>Shop contents</div>
-        <button onClick={toggle}>Close</button>
+        <Cart cartItems={cartItems} />
+        <button onClick={toggle} className="continue-shopping">
+          Continue shopping
+        </button>
       </div>
     </nav>
   );

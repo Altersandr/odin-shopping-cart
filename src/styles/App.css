@@ -8,7 +8,8 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   background: radial-gradient(
     circle,
     rgb(250, 137, 24) 0%,
@@ -27,6 +28,7 @@ body {
   top: 300px;
   left: 100px;
   width: 500px;
+  font-size: "55px";
 }
 
 #go-to-shopBtn {
@@ -78,4 +80,93 @@ body {
 .btn:hover:after {
   -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+#shop-items {
+  width: 100%;
+  background-color: white;
+  padding-top: 160px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+  align-items: center;
+  justify-items: center;
+}
+
+.shop-item {
+  color: rgb(66, 66, 66);
+  border: 1px solid #105f5b;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shop-item + div {
+  border: 1px solid #105f5b;
+  padding: 30px;
+  border-radius: 25px;
+  place-self: center;
+}
+
+.add-btn {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+}
+
+.add-btn > button {
+  padding: 10px;
+  width: 140px;
+  height: 45px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(250, 137, 24);
+  color: #fff;
+  font-size: 20px;
+}
+
+.add-btn > button:hover {
+  background-color: rgba(250, 137, 24, 0.637);
+  cursor: pointer;
+}
+
+#cart {
+  color: #222;
+}
+
+.cart-item {
+  display: flex;
+  gap: 3em;
+}
+#pricing-quantity {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  align-items: center;
+  gap: 1em;
+}
+#pricing-quantity div > span {
+  margin: 0.5em;
+  /* color: white; */
+}
+
+.minus,
+.plus {
+  padding: 10px;
+  background-color: #abacac;
+}
+
+.checkout,
+.continue-shopping {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(250, 137, 24);
+  color: #fff;
+  font-size: 20px;
 }

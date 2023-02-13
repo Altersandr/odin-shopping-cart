@@ -1,37 +1,26 @@
 import "./styles/App.css";
-import body from "./img/body.jpg";
-import OffcanvasExample from "./components/Navbar";
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
+import Contact from "./pages/Contact";
+import Navbar from "./components/Navbar";
 import { Footer } from "./components/Footer";
-
-import React, { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
 function App() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => setProducts(json));
-  }, []);
-
-  // const displayProducts = products.map((item) => {
-  //   return <p>{item.title}</p>;
-  // });
+  const [cartItems, setCartItems] = useState([]);
 
   return (
     <div className="App">
-      <OffcanvasExample />
-      <h2 id="shop-slogan" style={{ fontSize: "55px" }}>
-        Our shop has only the top tier, cream of the crop products with 0
-        bullshit.
-      </h2>
-      <button id="go-to-shopBtn" className="btn">
-        <span>Go To Shop</span>
-      </button>
-      <div>
-        <img id="main-body" src={body} width="100%"></img>
-      </div>
-
+      <Navbar cartItems={cartItems} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/shop"
+          element={<Shop setCartItems={setCartItems} cartItems={cartItems} />}
+        />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
       <Footer />
     </div>
   );
