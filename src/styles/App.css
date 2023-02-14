@@ -3,6 +3,7 @@ body {
 }
 
 .App {
+  overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
@@ -18,15 +19,7 @@ body {
   color: white;
 }
 
-#shop-slogan,
-#go-to-shopBtn {
-  position: absolute;
-  z-index: 5;
-}
-
 #shop-slogan {
-  top: 300px;
-  left: 100px;
   width: 500px;
   font-size: 55px;
 }
@@ -36,8 +29,6 @@ body {
   height: 60px;
   border-radius: 50px;
   border: none;
-  left: 100px;
-  bottom: 200px;
 }
 
 .btn {
@@ -185,11 +176,27 @@ body {
 }
 
 #contact {
-  margin-top: 350px;
+  margin: auto;
 }
 
 #contact-images {
   cursor: pointer;
   display: flex;
   gap: 50px;
+}
+
+#main-body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../img/body.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#home-left-text {
+  padding-left: 100px;
 }
