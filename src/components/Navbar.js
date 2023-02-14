@@ -21,7 +21,11 @@ const Navbar = ({ cartItems, total, handleAddToCart }) => {
       <div>
         <ul className="navbar-nav">
           <li className="nav-item">
-            <NavLink className="nav-link hvr-underline-from-center" to="/">
+            <NavLink
+              index
+              className="nav-link hvr-underline-from-center"
+              to="/"
+            >
               Home
             </NavLink>
           </li>
