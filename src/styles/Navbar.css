@@ -30,6 +30,7 @@
   padding: 1.5rem;
   background-color: #ffffff;
   transition: transform 0.3s ease-out;
+  border: 1px solid gray;
 }
 
 .offcanvas-collapse.show {
@@ -73,3 +74,13 @@
     transform: rotate(-45deg);
   }
 } */
+
+#items {
+  display: flex;
+  flex-direction: column;
+  max-height: 70vh;
+  gap: 2em;
+  overflow: scroll;
+  overflow-x: hidden;
+  width: inherit;
+}
