@@ -4,7 +4,7 @@ import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import { Footer } from "./components/Footer";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import React, { useState } from "react";
 
 function App() {
@@ -38,6 +38,7 @@ function App() {
       />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route
           path="/shop"
           element={
