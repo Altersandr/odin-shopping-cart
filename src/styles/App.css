@@ -84,7 +84,7 @@ body {
 
 #shop-items {
   width: 100%;
-  background-color: white;
+  background-color: rgb(247, 149, 52);
   padding-top: 160px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -94,6 +94,7 @@ body {
 }
 
 .shop-item {
+  background-color: #fff;
   color: rgb(66, 66, 66);
   border: 1px solid #105f5b;
   padding: 20px;
@@ -166,7 +167,21 @@ body {
   border: none;
   border-radius: 20px;
   border: none;
-  background-color: rgb(250, 137, 24);
+  background-color: rgb(255, 60, 0);
   color: #fff;
   font-size: 20px;
+  cursor: pointer;
+}
+
+.continue-shopping {
+  background-color: rgb(7, 182, 36);
+}
+
+.checkout:hover,
+.continue-shopping:hover {
+  opacity: 0.7;
+}
+
+.checkout {
+  margin: 10px 0;
 }

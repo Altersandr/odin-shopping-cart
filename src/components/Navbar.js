@@ -2,11 +2,18 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
 import Cart from "./Cart";
+import cart from "../img/cart.png";
 
-const Navbar = ({ cartItems }) => {
+const Navbar = ({ cartItems, total, handleAddToCart }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+
+  let length = 0;
+
+  cartItems.forEach((item) => {
+    return (length += item.quantity);
+  });
 
   return (
     <nav className="navbar header">
@@ -31,11 +38,20 @@ const Navbar = ({ cartItems }) => {
         </ul>
       </div>
       <div id="cart-items">
-        <span id="orders">0</span>
+        <span
+          id="orders"
+          style={{
+            padding: "10px",
+            backgroundColor: "gray",
+            borderRadius: "50%",
+          }}
+        >
+          {length}
+        </span>
         <button className="navbar-toggler" onClick={toggle}>
           <img
             height="45px"
-            src="https://cdn-icons-png.flaticon.com/512/262/262611.png"
+            src={cart}
             className="navbar-toggler-icon"
             alt="cart"
           />
@@ -47,7 +63,11 @@ const Navbar = ({ cartItems }) => {
           transform: isOpen ? "translateX(0)" : "translateX(100%)",
         }}
       >
-        <Cart cartItems={cartItems} />
+        <Cart
+          cartItems={cartItems}
+          total={total}
+          handleAddToCart={handleAddToCart}
+        />
         <button onClick={toggle} className="continue-shopping">
           Continue shopping
         </button>
