@@ -146,6 +146,7 @@ body {
 
 .minus,
 .plus {
+  cursor: pointer;
   padding: 10px;
   background-color: #abacac;
 }

@@ -38,7 +38,6 @@ function App() {
       />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
         <Route
           path="/shop"
           element={
@@ -52,6 +51,7 @@ function App() {
           }
         />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />
     </div>
