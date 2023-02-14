@@ -17,21 +17,24 @@ const Navbar = ({ cartItems, total, handleAddToCart }) => {
 
   return (
     <nav className="navbar header">
-      <h1 id="page-title">Shop Mockup</h1>
+      <h1 id="page-title">Fake Shop</h1>
       <div>
         <ul className="navbar-nav">
           <li className="nav-item">
-            <NavLink className="nav-link" to="/">
+            <NavLink className="nav-link hvr-underline-from-center" to="/">
               Home
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/shop">
+            <NavLink className="nav-link hvr-underline-from-center" to="/shop">
               Shop
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/contact">
+            <NavLink
+              className="nav-link hvr-underline-from-center"
+              to="/contact"
+            >
               Contact
             </NavLink>
           </li>

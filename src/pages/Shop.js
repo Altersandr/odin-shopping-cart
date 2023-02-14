@@ -1,34 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-export default function Shop({
-  setCartItems,
-  cartItems,
-  setTotal,
-  total,
-  handleAddToCart,
-}) {
-  // const [cart, setCart] = useState([]);
-
+export default function Shop({ handleAddToCart }) {
   const [products, setProducts] = useState([]);
-
-  // const handleAddToCart = (item) => {
-  //   // console.log(car);
-
-  //   const itemIndex = cartItems.findIndex(
-  //     (cartItem) => cartItem.id === item.id
-  //   );
-  //   if (itemIndex !== -1) {
-  //     const updatedCart = [...cartItems];
-  //     updatedCart[itemIndex].quantity++;
-  //     setCartItems(updatedCart);
-  //   } else {
-  //     const newItem = { ...item, quantity: 1 };
-  //     setCartItems([...cartItems, newItem]);
-  //   }
-  //   setTotal(total + item.price * item.quantity);
-
-  //   console.log(cartItems);
-  // };
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")

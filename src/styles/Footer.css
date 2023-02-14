@@ -2,7 +2,6 @@ footer {
   z-index: 3;
   height: 50px;
   width: 100%;
-  /* overflow: hidden; */
   background-color: #105f5b;
   display: flex;
   justify-content: center;
