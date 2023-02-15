@@ -190,6 +190,7 @@ body {
 }
 
 #main-body {
+  border: 1px solid #105f5b;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -197,10 +198,11 @@ body {
   width: 100vw;
   background-image: url("../img/body.jpg");
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 #home-left-text {
+  margin-top: 140px;
   padding-left: 100px;
 }

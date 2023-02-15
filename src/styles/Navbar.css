@@ -32,6 +32,7 @@
   background-color: #ffffff;
   transition: transform 0.3s ease-out;
   border: 1px solid gray;
+  z-index: 4;
 }
 
 .offcanvas-collapse.show {
@@ -71,6 +72,12 @@
   color: rgba(248, 162, 76, 0.911);
   font-size: 55px;
   margin-left: 2em;
+}
+
+@media only screen and (max-width: 700px) {
+  #page-title {
+    margin-left: 0;
+  }
 }
 
 #cart-items {
