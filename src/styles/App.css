@@ -48,11 +48,13 @@ body {
 }
 
 .btn span {
+  display: block;
   position: relative;
-  z-index: 4;
+  z-index: 3;
 }
 
 .btn:after {
+  z-index: 2;
   pointer-events: none;
   content: "";
   position: absolute;
@@ -68,6 +70,7 @@ body {
 }
 
 .btn:hover:after {
+  pointer-events: none;
   -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }

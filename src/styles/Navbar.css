@@ -45,6 +45,7 @@
 }
 
 .nav-item {
+
   margin: 1rem 0;
 }
 
@@ -54,6 +55,8 @@
   padding: 0.5rem 1rem;
   color: whitesmoke;
   text-decoration: none;
+  position: relative;
+  z-index: 3;
 }
 
 .nav-link:hover {
